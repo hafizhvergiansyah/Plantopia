@@ -2,7 +2,7 @@ import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
-import { faUserGraduate, faPlusCircle,faHome, faUserPen, faMapMarkedAlt, faTree } from '@fortawesome/free-solid-svg-icons';
+import { faUserGraduate, faPlusCircle,faHome, faUserPen, faMapMarkedAlt, faTree, faUser } from '@fortawesome/free-solid-svg-icons';
 
 // Import Screens
 import HomeScreen from './HomeScreen';
@@ -10,6 +10,7 @@ import Createdata from './Createdata';
 import DataTanaman from './Listdata';
 import Editdata from './Editdata';
 import MapView from './Mapview';
+import Profil from './Profil';
 
 // Tab Navigator
 const Tab = createBottomTabNavigator();
@@ -58,6 +59,15 @@ export default function App() {
           options={{
             tabBarIcon: ({ color }) => (
               <FontAwesomeIcon icon={faMapMarkedAlt} color={color} size={20} />
+            ),
+          }}
+        />
+        <Tab.Screen
+          name="Profil"
+          component={Profil}
+          options={{
+            tabBarIcon: ({ color }) => (
+              <FontAwesomeIcon icon={faUser} color={color} size={20} />
             ),
           }}
         />
